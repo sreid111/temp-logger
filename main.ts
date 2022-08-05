@@ -1,6 +1,9 @@
 datalogger.onLogFull(function () {
     basic.showIcon(IconNames.No)
 })
+input.onButtonPressed(Button.AB, function () {
+    datalogger.deleteLog()
+})
 datalogger.setColumnTitles("Temp")
 loops.everyInterval(1800000, function () {
     datalogger.log(datalogger.createCV("Temp", input.temperature()))
